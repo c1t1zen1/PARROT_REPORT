@@ -1,21 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>News Parody Site</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Daily Parrot</title>
     <style>
         /* Add your CSS styles here */
+	img {
+ 	   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+           filter: grayscale(100%); 
+        }
+
+        body {
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 50px;
+        }
+
+        /* Styles for larger screens */
+    .column {
+        width: 33%;
+        float: left;
+    }
+
+    /* Styles for smaller screens */
+    @media (max-width: 600px) {
+        .column {
+            width: 100%;
+            float: none;
+        }
+    }
+
+        ul {
+            list-style-type: none;
+            padding-left: 10px;
+            padding-right: 10px;
+	    text-align: left;
+        }
+
+        ul li {
+            padding: 10px;
+            font-size: 1.4rem;
+            background-color: #f1f1f1;
+            margin-bottom: 10px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: inherit;
+        }
     </style>
 </head>
 <body>
-    <h1>News Parody Site</h1>
-    <h2>Fark Headlines</h2>
-    <ul id="fark-headlines">
+    <img src="PARROT_NEWS.jpg" alt=Head Parrot width="200" height="200"></img>			
+    <h1>Parrot Report</h1>
+    <div class="column">
+        <h2>Fark</h2>
+        <ul id="fark-headlines">
+            <!-- The Python script will generate list items here -->
+        </ul>
+    </div>
+    <div class="column">
+        <h2>Onion</h2>
+        <ul id="onion-headlines">
+            <!-- The Python script will generate list items here -->
+        </ul>
+    </div>
+    <div class="column">
+        <h2>Hard Times</h2>
+        <ul id="hardtimes-headlines">
         <!-- The Python script will generate list items here -->
-    </ul>
-    <h2>The Onion Headlines</h2>
-    <ul id="onion-headlines">
-        <!-- The Python script will generate list items here -->
-    </ul>
+        </ul>
+    </div>
     <script>
         // Add your JavaScript code here
     </script>

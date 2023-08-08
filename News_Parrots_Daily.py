@@ -27,15 +27,19 @@ def scrape_headlines(url, tag, class_name=None, is_onion=False):
                 headline = {'text': a_tag.text, 'link': a_tag.get('href')}
                 headlines.append(headline)
 
-    return headlines
+    # Limit the number of headlines to 12
+    return headlines[:12]
 
 # Example usage:
 fark_headlines = scrape_headlines('https://www.fark.com', 'span', 'headline')
-onion_headlines = scrape_headlines('https://www.theonion.com/latest', 'h2', 'sc-759qgu-0', is_onion=True)
+onion_headlines = scrape_headlines('https://www.theonion.com', 'h4', 'sc-1qoge05-0', is_onion=True)
+hardtimes_headlines = scrape_headlines('https://thehardtimes.net', 'h2', 'post-title')
 
-print('Fark Headlines:', fark_headlines)
-print('AND IN OTHER NEWS')
-print('The Onion Headlines:', onion_headlines)
+# print('Fark Headlines:', fark_headlines)
+# print('The Hard Times Headlines:', hardtimes_headlines)
+print('YOUR NEWS IS SERVED')
+# print('The Onion Headlines:', onion_headlines)
+
 
 # Load the HTML template
 with open('template.html', 'r') as f:
@@ -58,6 +62,14 @@ for headline in onion_headlines:
     li.append(a)
     soup.find(id='onion-headlines').append(li)
 
+# Generate the list items for The Hard Times headlines
+for headline in hardtimes_headlines:
+    li = soup.new_tag('li')
+    a = soup.new_tag('a', href=headline['link'])
+    a.string = headline['text']
+    li.append(a)
+    soup.find(id='hardtimes-headlines').append(li)
+
 # Save the modified HTML
-with open('index.html', 'w') as f:
+with open('index.html', 'w', encoding='utf-8') as f:
     f.write(str(soup))
