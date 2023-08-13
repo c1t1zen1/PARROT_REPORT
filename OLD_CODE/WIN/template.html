@@ -75,36 +75,18 @@
     </div>
     <script>
         // JavaScript code
-
-	// Get the image container element
-	const imageContainers = document.querySelectorAll('.generated-image');
-
-	let currentIndex = 0;
-	const totalImages = 4; // Total number of images
-
-	/// Function to update the image
-	function updateImage() {
-	    // Loop through each image container
-            imageContainers.forEach((imageContainer) => {
-                // Get the current image source
-                let imagePath = imageContainer.src;
-
-                // Replace the last digit with the current index
-                imagePath = imagePath.replace(/\d(?=\.jpeg$)/, currentIndex);
-
-                // Update the image source
-                imageContainer.src = imagePath;
-            });
-
-            // Increment the index
-            currentIndex = (currentIndex + 1) % totalImages;
-        }
-
-	// Initial image update
-	updateImage();
-
-	// Schedule image updates every 6 seconds
-	setInterval(updateImage, 6000);
+        // Assuming you have the base64 encoded image data in a variable named imageData
+        // const imageData = "BASE64_ENCODED_IMAGE_DATA"; // Replace this with the actual data
+        // document.getElementById('generated-image').src = `data:image/jpeg;base64,${imageData}`;
+        
+    //    document.getElementById('themeToggle').addEventListener('click', function() {
+    //    const currentTheme = document.documentElement.getAttribute('data-theme');
+    //    if (currentTheme === 'dark') {
+    //        document.documentElement.setAttribute('data-theme', 'light');
+    //    } else {
+    //        document.documentElement.setAttribute('data-theme', 'dark');
+    //    }
+//    });
 
     </script>
 </body>

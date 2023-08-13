@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import subprocess
 import time
+import os
 
 def scrape_headlines(url, tag, class_name=None, is_onion=False):
     response = requests.get(url)
@@ -29,8 +30,8 @@ def scrape_headlines(url, tag, class_name=None, is_onion=False):
                 headline = {'text': a_tag.text, 'link': a_tag.get('href')}
                 headlines.append(headline)
 
-    # Limit the number of headlines to 8
-    return headlines[:8]
+    # Limit the number of headlines to 12
+    return headlines[:12]
 
 # Example usage:
 fark_headlines = scrape_headlines('https://www.fark.com', 'span', 'headline')
@@ -43,7 +44,7 @@ hardtimes_headlines = scrape_headlines('https://thehardtimes.net', 'h2', 'post-t
 print('YOUR NEWS IS SERVED')
 
 # Load the HTML template
-with open('C:/Users/WindowsX/Documents/Code/Bimg/template.html', 'r') as f:
+with open('./template.html', 'r') as f:
     html = f.read()
 soup = BeautifulSoup(html, 'html.parser')
 
@@ -72,59 +73,40 @@ for headline in hardtimes_headlines:
     soup.find(id='hardtimes-headlines').append(li)
 
 # Save the modified HTML
-with open('C:/Users/WindowsX/Documents/Code/Bimg/index.html', 'w', encoding='utf-8') as f:
+with open('./index2.html', 'w', encoding='utf-8') as f:
     f.write(str(soup))
 
-# Run the FARK Node.js script
-subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_FARK_01b4.mjs"])
+# Run the FARK Headlines into Bing Image Creator
+subprocess.run(["node", "./HeadlineImageUpdater_FARK_01b6.mjs"])
 time.sleep(5)
-subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_FARK_02b4.mjs"])
+subprocess.run(["node", "./HeadlineImageUpdater_FARK_02b6.mjs"])
 time.sleep(5)
-subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_FARK_03b4.mjs"])
+subprocess.run(["node", "./HeadlineImageUpdater_FARK_03b5.mjs"])
 time.sleep(5)
-subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_FARK_04b4.mjs"])
+subprocess.run(["node", "./HeadlineImageUpdater_FARK_04b5.mjs"])
 time.sleep(5)
-subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_FARK_05b4.mjs"])
+subprocess.run(["node", "./HeadlineImageUpdater_FARK_05b5.mjs"])
 time.sleep(5)
-subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_FARK_06b4.mjs"])
-time.sleep(5)
-subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_FARK_07b4.mjs"])
-time.sleep(5)
-subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_FARK_08b4.mjs"])
+subprocess.run(["node", "./HeadlineImageUpdater_FARK_06b5.mjs"])
 time.sleep(5)
 
-# Run the Onion Node.js script
-# subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_onion_01.mjs"])
-# time.sleep(5)
-# subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_onion_02b4.mjs"])
-# time.sleep(5)
-# subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_onion_03.mjs"])
-# time.sleep(5)
-# subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_onion_04.mjs"])
-# time.sleep(5)
-# subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_onion_05.mjs"])
-# time.sleep(5)
-# subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_onion_06.mjs"])
-# time.sleep(5)
-# subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_onion_07.mjs"])
-# time.sleep(5)
-# subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_onion_08.mjs"])
-# time.sleep(5)
+# Run The Onion Headlines into Bing Image Creator
+subprocess.run(["node", "./HeadlineImageUpdater_onion_01b5.mjs"])	
+time.sleep(5)
+subprocess.run(["node", "./HeadlineImageUpdater_onion_02b5.mjs"])
+time.sleep(5)
 
-# Run the Hard Times Node.js script
-# subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_HT_01b4.mjs"])
-# time.sleep(5)
-# subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_HT_02.mjs"])
-# time.sleep(5)
-# subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_HT_03.mjs"])
-# time.sleep(5)
-# subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_HT_04.mjs"])
-# time.sleep(5)
-# subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_HT_05.mjs"])
-# time.sleep(5)
-# subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_HT_06.mjs"])
-# time.sleep(5)
-# subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_HT_07.mjs"])
-# time.sleep(5)
-# subprocess.run(["node", "C:/Users/WindowsX/Documents/Code/Bimg/headlineImageUpdater_HT_08.mjs"])
-# time.sleep(5)
+# Run The Hard Times into Bing Image Creator
+subprocess.run(["node", "./HeadlineImageUpdater_HT_01b5.mjs"])
+time.sleep(5)
+subprocess.run(["node", "./HeadlineImageUpdater_HT_02b5.mjs"])
+
+# Get the current time
+now = int(time.time())
+
+# Rename index2.html to index-{current_time}.html
+os.rename("./index.html", f"./index-{now}.html")
+
+# Rename index2.html to index.html
+os.rename("./index2.html", "./index.html")
+
