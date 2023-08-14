@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="light">
 <head>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Daily Parrot</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PARROT REPORT</title>
     <style>
-        /* Add your CSS styles here */
-	img {
- 	   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-           filter: grayscale(100%); 
-        }
-
         body {
             text-align: center;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
         }
 
         h1 {
@@ -19,24 +15,24 @@
         }
 
         /* Styles for larger screens */
-    .column {
-        width: 33%;
-        float: left;
-    }
-
-    /* Styles for smaller screens */
-    @media (max-width: 600px) {
         .column {
-            width: 100%;
-            float: none;
+            width: 33%;
+            float: left;
         }
-    }
+
+        /* Styles for smaller screens */
+        @media (max-width: 600px) {
+            .column {
+                width: 100%;
+                float: none;
+            }
+        }
 
         ul {
             list-style-type: none;
             padding-left: 10px;
             padding-right: 10px;
-	    text-align: left;
+            text-align: left;
         }
 
         ul li {
@@ -53,11 +49,12 @@
     </style>
 </head>
 <body>
+    <!-- <button id="themeToggle">Toggle Dark Mode</button> -->
     <img src="PARROT_NEWS.jpg" alt="Parrot Pete on the Beat" Parrot width="200" height="200"></img>
     <h1><picture>
     <source media="(min-width: 480px)" srcset="PARROT_REPORT.jpg">
     <source media="(min-width: 1px)" srcset="PR_LOGO.jpg">
-    <img src="P_LOGO.jpg" alt="PARROT REPORT"></picture></h1>			
+    <img src="PR_LOGO.jpg" alt="PARROT REPORT"></picture></h1>			
     <div class="column">
         <h2>Fark</h2>
         <ul id="fark-headlines">
@@ -77,7 +74,39 @@
         </ul>
     </div>
     <script>
-        // Add your JavaScript code here
+        // JavaScript code
+
+	// Get the image container element
+	const imageContainers = document.querySelectorAll('.generated-image');
+
+	let currentIndex = 0;
+	const totalImages = 4; // Total number of images
+
+	/// Function to update the image
+	function updateImage() {
+	    // Loop through each image container
+            imageContainers.forEach((imageContainer) => {
+                // Get the current image source
+                let imagePath = imageContainer.src;
+
+                // Replace the last digit with the current index
+                imagePath = imagePath.replace(/\d(?=\.jpeg$)/, currentIndex);
+
+                // Update the image source
+                imageContainer.src = imagePath;
+            });
+
+            // Increment the index
+            currentIndex = (currentIndex + 1) % totalImages;
+        }
+
+	// Initial image update
+	updateImage();
+
+	// Schedule image updates every 6 seconds
+	setInterval(updateImage, 6000);
+
     </script>
 </body>
 </html>
+
