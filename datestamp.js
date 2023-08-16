@@ -8,7 +8,8 @@ const currentDate = new Date();
 const datestamp = currentDate.toLocaleString();
 
 const $ = cheerio.load(indexContent);
-const lastDiv = $('div').last();
-lastDiv.after(`\n<p style="text-align: center;">Parrot Pete reporting in at: ${datestamp} GMT</p>`);
+
+// Append the datestamp to the body, which will place it just before the closing </body> tag
+$('body').append(`\n<p style="text-align: center;">PARROT REPORT: ${datestamp} UTC</p>`);
 
 fs.writeFileSync('./index2.html', $.html());
