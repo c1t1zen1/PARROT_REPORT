@@ -11,3 +11,9 @@ All Fits that's Fit to Print
 
 Code running on O Cloud is version 1b8 - need to update rest of javascripts
  - share or embed
+
+
+# Updates
+ - PRchives
+ - Build-copy-html.sh atomization
+ - Email Logs
