@@ -12,7 +12,7 @@ Code running on Oracle and Google Cloud as backup - scrapping version 1b8
 
 * [PARROT REPORT LIVE ONLINE](https://c1t1zen.com/PR/)
 
-Parrot Report takes the top 15 satirical headlines from Fark, The Onion and Hard Times daily and generated new AI imagery for them with Bing Image Creator AKA Dall-E.
+Parrot Report takes the top 15 satirical headlines from Fark, The Onion and Hard Times daily and generates new AI imagery for the headlibes with Bing Image Creator AKA Dall-E.
 When a headline is too sensitive for the Bing censors Parrot Pete shows up.
 
 TO DO:
