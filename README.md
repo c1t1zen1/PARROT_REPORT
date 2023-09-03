@@ -8,7 +8,7 @@
 
 # **Current Report v 0.2.6**
 
-Code running on Oracle and Google Cloud as backup - scrapping version 1b8
+Code running on Oracle and Google Cloud as backup - scraping version 1b8
 
 * [PARROT REPORT LIVE ONLINE](https://c1t1zen.com/PR/)
 
