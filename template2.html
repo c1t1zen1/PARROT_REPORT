@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html data-theme="light">
-<head>
+<!DOCTYPE html><html data-theme="dark"><head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>PARROT REPORT</title>
     <style>
-        body {
-            font-family: Helvetica;
-            text-align: center;
-            text-decoration: none;
-            color: black;
-            background-color: white;
-        }
+            body {
+            	font-family: Helvetica;            
+                text-align: center;
+                text-decoration: none;
+                color: white;
+                background-color:  black; 
+            }
 
         h1 {
             margin-top: 5px;
@@ -41,7 +39,7 @@
         ul li {
             padding: 10px;
             font-size: 1.4rem;
-            background-color: #f1f1f1;
+            background-color: black;
             margin-bottom: 50px;
         }
 
@@ -54,13 +52,14 @@
         .nav-links {
             text-align: center;
             font-size: 18px;
+            color: white;
             margin-top: -30px;  /* Negative margin to move the links up */
             white-space: nowrap;  /* Prevent text from wrapping onto the next line */
         }
 
         .nav-links a {
             text-decoration: none;
-            color: black;
+            color: white;
             margin: 0 15px;
             display: inline-block;  /* Make them inline-block for horizontal layout */
         }
@@ -84,26 +83,26 @@
             }
         }
     </style>
-</head>
-<body>
+    </head>
+    <body>
     <a href="about.html">
-        <img src="PARROT_NEWS.jpg" alt="Parrot Pete on the Beat" width="200" height="200">
+    <img alt="Parrot Pete on the Beat" height="200" src="PARROT_NEWS.jpg" width="200">
     </a>
     <h1>
-        <a href="about.html">
-            <picture>
-                <source media="(min-width: 480px)" srcset="PARROT_REPORT.jpg">
-                <source media="(min-width: 1px)" srcset="PR_LOGO.jpg">
-                <img src="PR_LOGO.jpg" alt="PARROT REPORT">
-            </picture>
-        </a>
-    </h1>
+    <a href="about.html">
+    <picture>
+    <source media="(min-width: 480px)" srcset="PARROT_REPORT2_D.png">
+    <source media="(min-width: 1px)" srcset="PR_LOGO2_D.png">
+    <img alt="PARROT REPORT" src="PR_LOGO2_D.png">
+    </picture>
+</a>
+</h1>
     <!-- Adding the links here -->
     <div class="nav-links">
         <a href="about.html">ABOUT</a><span class="divider">|</span>
         <a href="archive.html" id="date-link">MONTH DD, YYYY</a><span class="divider">|</span>
-        <a href="indexD.html">DARK MODE</a>
-    </div>	
+        <a href="index.html">LIGHT MODE</a>
+    </div>		
     <div class="column">
         <h2>Fark</h2>
         <ul id="fark-headlines">
@@ -122,7 +121,7 @@
         <!-- The Python script will generate list items here -->
         </ul>
     </div>
-    <script>
+   <script>
         // JavaScript code
 	// Get the current date
  	const currentDate = new Date();
@@ -139,7 +138,7 @@
 
 	// Update the text of the link
  	document.getElementById('date-link').textContent = dateString;
-	// Get the image container element
+ 	// Get the image container element
 	const imageContainers = document.querySelectorAll('.generated-image');
 
 	let currentIndex = 0;
