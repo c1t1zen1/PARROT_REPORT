@@ -8,7 +8,8 @@
 
 # **Current Report v 0.2.6**
 
-Code running on Oracle and Google Cloud as backup - web scraping version 1b8
+This project runs on the fabulous https://github.com/nociza/Bimg backend.
+Live version running on Oracle Cloud - web scraping version 1b8
 
 * [PARROT REPORT LIVE ONLINE](https://c1t1zen.com/PR/)
 
