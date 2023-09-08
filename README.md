@@ -23,6 +23,6 @@ TO DO:
 # Recent Updates
 
 * PRchives
-* Build-copy-html.sh automization
+* Build-copy-html.sh automatization
 * Email Logs
 * Dark Mode
