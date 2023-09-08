@@ -1,0 +1,157 @@
+<!DOCTYPE html><html data-theme="dark"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>PARROT REPORT</title>
+    <style>
+            body {
+            	font-family: Helvetica;            
+                text-align: center;
+                text-decoration: none;
+                color: white;
+                background-color:  black; 
+            }
+
+        h1 {
+            margin-top: 5px;
+        }
+
+        /* Styles for larger screens */
+        .column {
+            width: 33%;
+            float: left;
+        }
+
+        /* Styles for smaller screens */
+        @media (max-width: 479px) {
+            .column {
+                width: 100%;
+                float: none;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-align: left;
+        }
+
+        ul li {
+            padding: 10px;
+            font-size: 1.4rem;
+            background-color: black;
+            margin-bottom: 50px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Existing styles */
+        .nav-links {
+            text-align: center;
+            font-size: 18px;
+            color: white;
+            margin-top: -30px;  /* Negative margin to move the links up */
+            white-space: nowrap;  /* Prevent text from wrapping onto the next line */
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            display: inline-block;  /* Make them inline-block for horizontal layout */
+        }
+
+        .divider {
+            margin: 0 5px;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 479px) {
+            .nav-links {
+                font-size: 18px;  /* Smaller font size */
+                margin-top: -15px; 
+            }
+            .nav-links a {
+                display: block;  /* Stack them vertically */
+                margin: 10px auto;  /* Center-align */
+            }
+            .divider {
+                display: none;  /* Hide the divider */
+            }
+        }
+    </style>
+    </head>
+    <body>
+    <a href="https://c1t1zen.com/PR/aboutD.html">
+    <img alt="Parrot Pete on the Beat" height="200" src="PARROT_NEWS.jpg" width="200">
+    </a>
+    <h1>
+    <a href="https://c1t1zen.com/PR/aboutD.html">
+    <picture>
+    <source media="(min-width: 480px)" srcset="PARROT_REPORT2_D.png">
+    <source media="(min-width: 1px)" srcset="PR_LOGO2_D.png">
+    <img alt="PARROT REPORT" src="PR_LOGO2_D.png">
+    </picture>
+</a>
+</h1>
+    <!-- Adding the links here -->
+    <div class="nav-links">
+    </div>		
+    <div class="column">
+        <h2>Fark</h2>
+        <ul id="fark-headlines">
+            <!-- The Python script will generate list items here -->
+        </ul>
+    </div>
+    <div class="column">
+        <h2>Onion</h2>
+        <ul id="onion-headlines">
+            <!-- The Python script will generate list items here -->
+        </ul>
+    </div>
+    <div class="column">
+        <h2>Hard Times</h2>
+        <ul id="hardtimes-headlines">
+        <!-- The Python script will generate list items here -->
+        </ul>
+    </div>
+   <script>
+        // JavaScript code
+	
+ 	// Get the image container element
+	const imageContainers = document.querySelectorAll('.generated-image');
+
+	let currentIndex = 0;
+	const totalImages = 4; // Total number of images
+
+	/// Function to update the image
+	function updateImage() {
+	    // Loop through each image container
+            imageContainers.forEach((imageContainer) => {
+                // Get the current image source
+                let imagePath = imageContainer.src;
+
+                // Replace the last digit with the current index
+                imagePath = imagePath.replace(/\d(?=\.jpeg$)/, currentIndex);
+
+                // Update the image source
+                imageContainer.src = imagePath;
+            });
+
+            // Increment the index
+            currentIndex = (currentIndex + 1) % totalImages;
+        }
+
+	// Initial image update
+	updateImage();
+
+	// Schedule image updates every 4 seconds
+	setInterval(updateImage, 4000);
+
+    </script>
+</body>
+</html>
+
