@@ -18,6 +18,7 @@ If a headline is too sensitive for the Bing censors Parrot Pete shows up to help
 
 TO DO:
 
+* Working on image generationd through Dall-e API since Bing Image Generator word filter was enacted.
 * share or embed images with headline
 
 # **Recent Updates**
