@@ -8,11 +8,10 @@
 
 # **Current Report v 0.3.0**
 
-Code running on Oracle and Google Cloud as backup - scrapping version 1a3 -
-
-This project runs on the fabulous [github.com/nociza/Bimg](https://github.com/nociza/Bimg) backend.
-
 * [PARROT REPORT LIVE ONLINE](https://c1t1zen.com/PR/)
+  
+Code running on Oracle and Google Cloud as backup - scrapping version 1a3 -
+This project runs on the fabulous [github.com/nociza/Bimg](https://github.com/nociza/Bimg) backend.
 
 Parrot Report takes the top 15 satirical headlines from Fark, The Onion and Hard Times daily and generated new AI imagery for them with Bing Image Creator AKA Dall-E.
 When a headline is too sensitive for the Bing censors Parrot Pete shows up.
