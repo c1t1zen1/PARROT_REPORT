@@ -9,6 +9,7 @@
 # **Current Report v 0.3.0**
 
 Code running on Oracle and Google Cloud as backup - scrapping version 1a3
+This project runs on the fabulous [github.com/nociza/Bimg](https://github.com/nociza/Bimg) backend.
 
 * [PARROT REPORT LIVE ONLINE](https://c1t1zen.com/PR/)
 
@@ -26,9 +27,6 @@ TO DO:
 * PRchives
 * Full Automization
 * Email Logs
-<<<<<<< Updated upstream
 * Dark Mode
 * ART Branch added with face mosiac and word cloud art experiments
-=======
 * Dark Mode
->>>>>>> Stashed changes
